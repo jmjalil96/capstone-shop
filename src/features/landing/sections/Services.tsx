@@ -13,17 +13,17 @@ const Services = () => {
           <div
             className="mb-6 inline-block rounded-full px-4 py-2 backdrop-blur-sm"
             style={{
-              backgroundColor: 'rgba(29, 44, 61, 0.08)',
+              backgroundColor: 'rgba(217, 213, 225, 0.45)',
               border: '1px solid rgba(29, 44, 61, 0.15)',
             }}
           >
-            <span className="font-medium text-sm" style={{ color: '#1d2c3d' }}>
+            <span className="font-medium text-sm" style={{ color: '#0c2939' }}>
               Protección integral
             </span>
           </div>
           <h2
             className="mb-6 font-bold text-3xl sm:text-4xl md:text-5xl"
-            style={{ color: '#1d2c3d' }}
+            style={{ color: '#0c2939' }}
           >
             Nuestros Servicios
           </h2>
@@ -44,7 +44,7 @@ const Services = () => {
             href="#contacto"
             className="inline-flex items-center rounded-full px-7 py-3 font-semibold transition-all duration-300"
             style={{
-              backgroundColor: '#1d2c3d',
+              backgroundColor: '#0c2939',
               color: '#ffffff',
             }}
             onMouseEnter={(e) => {
@@ -53,7 +53,7 @@ const Services = () => {
               e.currentTarget.style.boxShadow = '0 10px 20px rgba(29, 44, 61, 0.3)'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#1d2c3d'
+              e.currentTarget.style.backgroundColor = '#0c2939'
               e.currentTarget.style.transform = 'translateY(0)'
               e.currentTarget.style.boxShadow = 'none'
             }}

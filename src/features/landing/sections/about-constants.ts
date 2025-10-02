@@ -24,13 +24,13 @@ export const infoCards: InfoCard[] = [
     icon: Users,
     title: 'Atención personalizada',
     description: 'Te asesoramos de principio a fin',
-    iconColor: '#1d2c3d',
+    iconColor: '#0c2939',
   },
   {
     icon: Shield,
     title: 'Respuesta rápida',
     description: 'Siempre disponibles cuando nos necesitas',
-    iconColor: '#4ca18d',
+    iconColor: 'rgba(0, 140, 126, 0.8)',
   },
 ]
 
@@ -39,12 +39,12 @@ export const stats = {
     icon: Calendar,
     label: 'Establecido en',
     value: '2005',
-    iconColor: '#e9b949',
+    iconColor: '#e1ab33',
   },
   experience: {
     icon: Headphones,
     label: 'Años de experiencia',
     value: '+19 años',
-    iconColor: '#4ca18d',
+    iconColor: 'rgba(0, 140, 126, 0.8)',
   },
 }

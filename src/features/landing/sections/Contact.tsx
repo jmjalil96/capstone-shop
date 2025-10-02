@@ -16,10 +16,10 @@ const ContactItem = ({
         className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg"
         style={{ backgroundColor: 'rgba(76, 161, 141, 0.1)' }}
       >
-        <Icon size={24} style={{ color: '#4ca18d' }} />
+        <Icon size={24} style={{ color: 'rgba(0, 140, 126, 0.8)' }} />
       </div>
       <div>
-        <h3 className="mb-2 font-bold text-lg" style={{ color: '#1d2c3d' }}>
+        <h3 className="mb-2 font-bold text-lg" style={{ color: '#0c2939' }}>
           {title}
         </h3>
         <div style={{ color: '#666666' }}>
@@ -32,7 +32,7 @@ const ContactItem = ({
                     className="transition-colors hover:opacity-80"
                     style={{ color: '#666666' }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = '#4ca18d'
+                      e.currentTarget.style.color = '#008c7e'
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.color = '#666666'
@@ -51,7 +51,7 @@ const ContactItem = ({
               className="transition-colors hover:opacity-80"
               style={{ color: '#666666' }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#4ca18d'
+                e.currentTarget.style.color = '#008c7e'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.color = '#666666'
@@ -119,14 +119,14 @@ const Contact = () => {
               border: '1px solid rgba(76, 161, 141, 0.2)',
             }}
           >
-            <span className="font-medium text-sm" style={{ color: '#4ca18d' }}>
+            <span className="font-medium text-sm" style={{ color: '#008c7e' }}>
               Estamos aquí para ti
             </span>
           </div>
 
           <h2
             className="mb-6 font-bold text-3xl sm:text-4xl md:text-5xl"
-            style={{ color: '#1d2c3d' }}
+            style={{ color: '#0c2939' }}
           >
             Contáctanos
           </h2>
@@ -138,7 +138,7 @@ const Contact = () => {
 
         <div className="grid gap-10 md:grid-cols-2 lg:gap-16">
           <div className="rounded-2xl bg-white p-8 shadow-lg lg:p-10">
-            <h3 className="mb-8 font-bold text-2xl" style={{ color: '#1d2c3d' }}>
+            <h3 className="mb-8 font-bold text-2xl" style={{ color: '#0c2939' }}>
               Información de contacto
             </h3>
 
@@ -152,7 +152,7 @@ const Contact = () => {
             ))}
 
             <div className="mt-10">
-              <h4 className="mb-3 font-bold text-lg" style={{ color: '#1d2c3d' }}>
+              <h4 className="mb-3 font-bold text-lg" style={{ color: '#0c2939' }}>
                 Ubicación
               </h4>
               <div className="h-48 overflow-hidden rounded-lg bg-gray-100">
@@ -175,7 +175,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:underline"
-                  style={{ color: '#4ca18d' }}
+                  style={{ color: '#008c7e' }}
                 >
                   Ver mapa más grande
                 </a>
@@ -183,7 +183,7 @@ const Contact = () => {
             </div>
 
             <div className="mt-10">
-              <h4 className="mb-4 font-bold text-lg" style={{ color: '#1d2c3d' }}>
+              <h4 className="mb-4 font-bold text-lg" style={{ color: '#0c2939' }}>
                 Síguenos
               </h4>
               <div className="flex space-x-4">
@@ -196,7 +196,7 @@ const Contact = () => {
                     className="flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300"
                     style={{ backgroundColor: '#f5f5f5', color: '#666666' }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#1d2c3d'
+                      e.currentTarget.style.backgroundColor = '#0c2939'
                       e.currentTarget.style.color = '#ffffff'
                     }}
                     onMouseLeave={(e) => {
@@ -227,7 +227,7 @@ const Contact = () => {
               onSubmit={handleSubmit}
               className="h-full rounded-2xl bg-white p-8 shadow-lg lg:p-10"
             >
-              <h3 className="mb-8 font-bold text-2xl" style={{ color: '#1d2c3d' }}>
+              <h3 className="mb-8 font-bold text-2xl" style={{ color: '#0c2939' }}>
                 Envíanos un mensaje
               </h3>
 
@@ -244,7 +244,7 @@ const Contact = () => {
                   id={nameId}
                   name="name"
                   className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-colors focus:border-transparent focus:outline-none focus:ring-2"
-                  style={{ '--tw-ring-color': '#4ca18d' } as React.CSSProperties}
+                  style={{ '--tw-ring-color': '#008c7e' } as React.CSSProperties}
                   placeholder="Tu nombre"
                   value={formData.name}
                   onChange={handleInputChange}
@@ -265,7 +265,7 @@ const Contact = () => {
                   id={emailId}
                   name="email"
                   className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-colors focus:border-transparent focus:outline-none focus:ring-2"
-                  style={{ '--tw-ring-color': '#4ca18d' } as React.CSSProperties}
+                  style={{ '--tw-ring-color': '#008c7e' } as React.CSSProperties}
                   placeholder="tucorreo@ejemplo.com"
                   value={formData.email}
                   onChange={handleInputChange}
@@ -286,7 +286,7 @@ const Contact = () => {
                   id={phoneId}
                   name="phone"
                   className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-colors focus:border-transparent focus:outline-none focus:ring-2"
-                  style={{ '--tw-ring-color': '#4ca18d' } as React.CSSProperties}
+                  style={{ '--tw-ring-color': '#008c7e' } as React.CSSProperties}
                   placeholder="Tu número de teléfono"
                   value={formData.phone}
                   onChange={handleInputChange}
@@ -306,7 +306,7 @@ const Contact = () => {
                   name="message"
                   rows={4}
                   className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-colors focus:border-transparent focus:outline-none focus:ring-2"
-                  style={{ '--tw-ring-color': '#4ca18d' } as React.CSSProperties}
+                  style={{ '--tw-ring-color': '#008c7e' } as React.CSSProperties}
                   placeholder="¿En qué podemos ayudarte?"
                   value={formData.message}
                   onChange={handleInputChange}
@@ -321,7 +321,7 @@ const Contact = () => {
                     id={privacyId}
                     name="privacy"
                     className="mt-1 rounded"
-                    style={{ accentColor: '#4ca18d' }}
+                    style={{ accentColor: '#008c7e' }}
                     checked={formData.privacy}
                     onChange={handleInputChange}
                     required
@@ -336,7 +336,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full rounded-full px-7 py-3 font-semibold transition-all duration-300"
                 style={{
-                  backgroundColor: '#1d2c3d',
+                  backgroundColor: '#0c2939',
                   color: '#ffffff',
                 }}
                 onMouseEnter={(e) => {
@@ -345,7 +345,7 @@ const Contact = () => {
                   e.currentTarget.style.boxShadow = '0 10px 20px rgba(29, 44, 61, 0.3)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1d2c3d'
+                  e.currentTarget.style.backgroundColor = '#0c2939'
                   e.currentTarget.style.transform = 'translateY(0)'
                   e.currentTarget.style.boxShadow = 'none'
                 }}

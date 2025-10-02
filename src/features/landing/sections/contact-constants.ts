@@ -17,22 +17,22 @@ export const contactInfo: ContactInfo[] = [
   {
     icon: Phone,
     title: 'Teléfono',
-    content: ['+34 900 123 456', '+34 900 654 321'],
+    content: ['+593 4-391-7828', '+593 96-894-6779'],
   },
   {
     icon: Mail,
     title: 'Email',
-    content: 'info@capstone.com',
+    content: 'hola@capstone.com.ec',
   },
   {
     icon: MapPin,
     title: 'Ubicación',
-    content: ['Calle Principal 123, 28001', 'Madrid, España'],
+    content: ['Arcos Plaza I, MZ, Oficina 01'],
   },
   {
     icon: Clock,
     title: 'Horario',
-    content: ['Lunes a Viernes: 9:00 - 18:00', 'Sábado: 10:00 - 14:00'],
+    content: ['Lunes a Viernes: 8:30 - 17:00'],
   },
 ]
 
@@ -55,9 +55,9 @@ export const socialLinks: SocialLink[] = [
 ]
 
 export const mapConfig = {
-  latitude: 40.4168,
-  longitude: -3.7038,
+  latitude: -2.140621,
+  longitude: -79.865600,
   embedUrl:
-    'https://www.openstreetmap.org/export/embed.html?bbox=-3.7137889862060547%2C40.41275736771258%2C-3.6938190460205083%2C40.42083618045358&amp;layer=mapnik&amp;marker=40.41679693603082%2C-3.7038040161132812',
-  fullMapUrl: 'https://www.openstreetmap.org/?mlat=40.4168&amp;mlon=-3.7038#map=16/40.4168/-3.7038',
+    'https://www.openstreetmap.org/export/embed.html?bbox=-79.86686915159227%2C-2.141784043399928%2C-79.86433178186417%2C-2.1394548303091403&amp;layer=mapnik&amp;marker=-2.140620777465578%2C-79.86560046672821',
+  fullMapUrl: 'https://www.openstreetmap.org/?mlat=-2.140621&amp;mlon=-79.865600#map=19/-2.140619/-79.865600',
 }

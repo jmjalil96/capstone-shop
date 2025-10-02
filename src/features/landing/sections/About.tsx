@@ -40,7 +40,7 @@ const About = () => {
                     <p className="font-medium text-sm" style={{ color: '#666666' }}>
                       {stats.established.label}
                     </p>
-                    <p className="font-bold text-lg" style={{ color: '#1d2c3d' }}>
+                    <p className="font-bold text-lg" style={{ color: '#0c2939' }}>
                       {stats.established.value}
                     </p>
                   </div>
@@ -65,7 +65,7 @@ const About = () => {
                     <p className="font-medium text-sm" style={{ color: '#666666' }}>
                       {stats.experience.label}
                     </p>
-                    <p className="font-bold text-lg" style={{ color: '#1d2c3d' }}>
+                    <p className="font-bold text-lg" style={{ color: '#0c2939' }}>
                       {stats.experience.value}
                     </p>
                   </div>
@@ -79,18 +79,18 @@ const About = () => {
             <div
               className="mb-6 inline-block rounded-full px-4 py-2 backdrop-blur-sm"
               style={{
-                backgroundColor: 'rgba(29, 44, 61, 0.1)',
+                backgroundColor: 'rgba(217, 213, 225, 0.5)', // #d9dfe1
                 border: '1px solid rgba(29, 44, 61, 0.2)',
               }}
             >
-              <span className="font-medium text-sm" style={{ color: '#1d2c3d' }}>
+              <span className="font-medium text-sm" style={{ color: '#0c2939' }}>
                 Quiénes somos
               </span>
             </div>
 
             <h2
               className="mb-6 font-bold text-3xl sm:text-4xl md:text-5xl"
-              style={{ color: '#1d2c3d' }}
+              style={{ color: '#0c2939' }}
             >
               Tu Broker de confianza desde 2005
             </h2>
@@ -106,7 +106,7 @@ const About = () => {
               {features.map((feature) => (
                 <div key={feature.text} className="flex items-start">
                   <div className="mt-1 rounded-full p-1" style={{ backgroundColor: '#f5f5f5' }}>
-                    <Check size={16} style={{ color: '#4ca18d' }} />
+                    <Check size={16} style={{ color: 'rgba(0, 140, 126, 0.8)' }} />
                   </div>
                   <p className="ml-3" style={{ color: '#333333' }}>
                     {feature.text}
@@ -124,7 +124,7 @@ const About = () => {
                   style={{ backgroundColor: '#f9fafb' }}
                 >
                   <card.icon size={28} className="mb-3" style={{ color: card.iconColor }} />
-                  <h3 className="mb-2 font-bold text-lg" style={{ color: '#1d2c3d' }}>
+                  <h3 className="mb-2 font-bold text-lg" style={{ color: '#0c2939' }}>
                     {card.title}
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: '#666666' }}>
@@ -139,7 +139,7 @@ const About = () => {
               href="#contacto"
               className="inline-flex items-center rounded-full px-7 py-3 font-semibold transition-all duration-300"
               style={{
-                backgroundColor: '#1d2c3d',
+                backgroundColor: '#0c2939',
                 color: '#ffffff',
               }}
               onMouseEnter={(e) => {
@@ -148,7 +148,7 @@ const About = () => {
                 e.currentTarget.style.boxShadow = '0 10px 20px rgba(29, 44, 61, 0.3)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#1d2c3d'
+                e.currentTarget.style.backgroundColor = '#0c2939'
                 e.currentTarget.style.transform = 'translateY(0)'
                 e.currentTarget.style.boxShadow = 'none'
               }}
