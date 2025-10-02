@@ -51,14 +51,14 @@ function Step1InsuranceType() {
               border: '1px solid rgba(29, 44, 61, 0.15)',
             }}
           >
-            <span className="font-medium text-sm" style={{ color: '#1d2c3d' }}>
+            <span className="font-medium text-sm" style={{ color: '#0c2939' }}>
               Paso 1 de 3
             </span>
           </div>
 
           <h1
             className="mb-4 font-bold text-3xl sm:text-4xl md:text-5xl"
-            style={{ color: '#1d2c3d' }}
+            style={{ color: '#0c2939' }}
           >
             ¿Qué tipo de seguro necesitas?
           </h1>

@@ -52,7 +52,7 @@ function BusinessInsuranceForm({ onSubmit }: BusinessInsuranceFormProps) {
           {/* Business Information */}
           <div className="space-y-6">
             <div className="mb-6">
-              <h3 className="font-semibold text-lg" style={{ color: '#1d2c3d' }}>
+              <h3 className="font-semibold text-lg" style={{ color: '#0c2939' }}>
                 Datos del Negocio
               </h3>
               <p className="text-sm" style={{ color: '#666666' }}>

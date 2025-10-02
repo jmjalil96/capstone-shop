@@ -54,7 +54,7 @@ function LifeInsuranceForm({ onSubmit }: LifeInsuranceFormProps) {
           {/* Left Column - Policy Information */}
           <div className="space-y-6">
             <div className="mb-6">
-              <h3 className="font-semibold text-lg" style={{ color: '#1d2c3d' }}>
+              <h3 className="font-semibold text-lg" style={{ color: '#0c2939' }}>
                 Datos de la Póliza
               </h3>
               <p className="text-sm" style={{ color: '#666666' }}>
@@ -110,7 +110,7 @@ function LifeInsuranceForm({ onSubmit }: LifeInsuranceFormProps) {
           {/* Right Column - Personal Information */}
           <div className="space-y-6">
             <div className="mb-6">
-              <h3 className="font-semibold text-lg" style={{ color: '#1d2c3d' }}>
+              <h3 className="font-semibold text-lg" style={{ color: '#0c2939' }}>
                 Información Personal
               </h3>
               <p className="text-sm" style={{ color: '#666666' }}>

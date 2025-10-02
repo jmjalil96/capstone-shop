@@ -52,7 +52,7 @@ function HomeInsuranceForm({ onSubmit }: HomeInsuranceFormProps) {
           {/* Left - Property Details */}
           <div className="space-y-6">
             <div className="mb-6">
-              <h3 className="font-semibold text-lg" style={{ color: '#1d2c3d' }}>
+              <h3 className="font-semibold text-lg" style={{ color: '#0c2939' }}>
                 Datos de la Propiedad
               </h3>
               <p className="text-sm" style={{ color: '#666666' }}>
@@ -127,7 +127,7 @@ function HomeInsuranceForm({ onSubmit }: HomeInsuranceFormProps) {
           {/* Right - Owner Information */}
           <div className="space-y-6">
             <div className="mb-6">
-              <h3 className="font-semibold text-lg" style={{ color: '#1d2c3d' }}>
+              <h3 className="font-semibold text-lg" style={{ color: '#0c2939' }}>
                 Información del Propietario
               </h3>
               <p className="text-sm" style={{ color: '#666666' }}>

@@ -40,7 +40,7 @@ const InsuranceTypeCard = ({ insuranceType, index, onSelect }: InsuranceTypeCard
         {featured && (
           <div
             className="-right-2 -top-2 absolute rounded-lg px-3 py-1 font-bold text-xs"
-            style={{ backgroundColor: '#e9b949', color: '#1d2c3d' }}
+            style={{ backgroundColor: 'rgba(225, 171, 51, 0.9)', color: '#0c2939' }}
           >
             Popular
           </div>
@@ -50,13 +50,13 @@ const InsuranceTypeCard = ({ insuranceType, index, onSelect }: InsuranceTypeCard
           className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110"
           style={{
             backgroundColor: featured ? 'rgba(233, 185, 73, 0.15)' : 'rgba(29, 44, 61, 0.08)',
-            color: featured ? '#e9b949' : '#1d2c3d',
+            color: featured ? 'rgba(225, 171, 51, 0.9)' : '#0c2939',
           }}
         >
           <Icon size={32} strokeWidth={2} />
         </div>
 
-        <h3 className="mb-2 font-bold text-xl sm:text-2xl" style={{ color: '#1d2c3d' }}>
+        <h3 className="mb-2 font-bold text-xl sm:text-2xl" style={{ color: '#0c2939' }}>
           {title}
         </h3>
 
@@ -68,7 +68,7 @@ const InsuranceTypeCard = ({ insuranceType, index, onSelect }: InsuranceTypeCard
           className="rounded-full px-3 py-1 font-semibold text-xs"
           style={{
             backgroundColor: featured ? 'rgba(233, 185, 73, 0.1)' : 'rgba(29, 44, 61, 0.05)',
-            color: featured ? '#e9b949' : '#1d2c3d',
+            color: featured ? 'rgba(225, 171, 51, 0.9)' : '#0c2939',
           }}
         >
           {priceFrom}
