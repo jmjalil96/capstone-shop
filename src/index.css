@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+/* Animations */
+@keyframes card-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-reveal {
+  animation: card-reveal 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-in-backdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-backdrop {
+  animation: fade-in-backdrop 0.2s ease-out forwards;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out forwards;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-teal-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-teal-700 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border-2 border-slate-800 bg-transparent px-6 py-3 font-semibold text-slate-800 transition-all duration-300 hover:bg-slate-800 hover:text-white hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5;
+}
