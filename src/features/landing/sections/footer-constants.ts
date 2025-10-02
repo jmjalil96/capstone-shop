@@ -25,7 +25,7 @@ export const legalLinks: FooterLink[] = [
 ]
 
 export const contactDetails = {
-  phones: ['+34 900 123 456', '+34 900 654 321'],
-  email: 'info@capstone.com',
-  address: ['Calle Principal 123, 28001', 'Madrid, España'],
+  phones: ['+593 4-391-7828', '+593 96-894-6779'],
+  email: 'hola@capstone.com.ec',
+  address: ['Arcos Plaza I, MZ, Oficina 01'],
 }
