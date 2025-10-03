@@ -55,9 +55,11 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
           style={{
             backgroundColor: 'transparent',
             color: '#0c2939',
-            border: featured ? '2px solid rgba(225, 171, 51, 0.8)' : '2px solid rgba(29, 44, 61, 0.2)',
+            border: featured
+              ? '2px solid rgba(225, 171, 51, 0.8)'
+              : '2px solid rgba(29, 44, 61, 0.2)',
           }}
-          onMouseEnter={(e) => {
+          onMouseEnter={e => {
             if (featured) {
               e.currentTarget.style.backgroundColor = 'rgba(225, 171, 51, 0.9)'
               e.currentTarget.style.borderColor = 'rgba(225, 171, 51, 0.7)'
@@ -68,7 +70,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
               e.currentTarget.style.color = '#ffffff'
             }
           }}
-          onMouseLeave={(e) => {
+          onMouseLeave={e => {
             e.currentTarget.style.backgroundColor = 'transparent'
             e.currentTarget.style.color = '#0c2939'
             if (featured) {

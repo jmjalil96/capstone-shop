@@ -56,8 +56,9 @@ export const socialLinks: SocialLink[] = [
 
 export const mapConfig = {
   latitude: -2.140621,
-  longitude: -79.865600,
+  longitude: -79.8656,
   embedUrl:
     'https://www.openstreetmap.org/export/embed.html?bbox=-79.86686915159227%2C-2.141784043399928%2C-79.86433178186417%2C-2.1394548303091403&amp;layer=mapnik&amp;marker=-2.140620777465578%2C-79.86560046672821',
-  fullMapUrl: 'https://www.openstreetmap.org/?mlat=-2.140621&amp;mlon=-79.865600#map=19/-2.140619/-79.865600',
+  fullMapUrl:
+    'https://www.openstreetmap.org/?mlat=-2.140621&amp;mlon=-79.865600#map=19/-2.140619/-79.865600',
 }

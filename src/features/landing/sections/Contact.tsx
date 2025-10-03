@@ -24,17 +24,17 @@ const ContactItem = ({
         </h3>
         <div style={{ color: '#666666' }}>
           {Array.isArray(content) ? (
-            content.map((line) => (
+            content.map(line => (
               <p key={line} className={content.indexOf(line) > 0 ? 'mt-1' : ''}>
                 {title === 'Teléfono' ? (
                   <a
                     href={`tel:${line.replace(/\s/g, '')}`}
                     className="transition-colors hover:opacity-80"
                     style={{ color: '#666666' }}
-                    onMouseEnter={(e) => {
+                    onMouseEnter={e => {
                       e.currentTarget.style.color = '#008c7e'
                     }}
-                    onMouseLeave={(e) => {
+                    onMouseLeave={e => {
                       e.currentTarget.style.color = '#666666'
                     }}
                   >
@@ -50,10 +50,10 @@ const ContactItem = ({
               href={`mailto:${content}`}
               className="transition-colors hover:opacity-80"
               style={{ color: '#666666' }}
-              onMouseEnter={(e) => {
+              onMouseEnter={e => {
                 e.currentTarget.style.color = '#008c7e'
               }}
-              onMouseLeave={(e) => {
+              onMouseLeave={e => {
                 e.currentTarget.style.color = '#666666'
               }}
             >
@@ -92,12 +92,12 @@ const Contact = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target
     if (type === 'checkbox') {
-      setFormData((prev) => ({
+      setFormData(prev => ({
         ...prev,
         [name]: (e.target as HTMLInputElement).checked,
       }))
     } else {
-      setFormData((prev) => ({
+      setFormData(prev => ({
         ...prev,
         [name]: value,
       }))
@@ -142,7 +142,7 @@ const Contact = () => {
               Información de contacto
             </h3>
 
-            {contactInfo.map((info) => (
+            {contactInfo.map(info => (
               <ContactItem
                 key={info.title}
                 icon={info.icon}
@@ -187,7 +187,7 @@ const Contact = () => {
                 Síguenos
               </h4>
               <div className="flex space-x-4">
-                {socialLinks.map((social) => (
+                {socialLinks.map(social => (
                   <a
                     key={social.name}
                     href={social.url}
@@ -195,11 +195,11 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     className="flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300"
                     style={{ backgroundColor: '#f5f5f5', color: '#666666' }}
-                    onMouseEnter={(e) => {
+                    onMouseEnter={e => {
                       e.currentTarget.style.backgroundColor = '#0c2939'
                       e.currentTarget.style.color = '#ffffff'
                     }}
-                    onMouseLeave={(e) => {
+                    onMouseLeave={e => {
                       e.currentTarget.style.backgroundColor = '#f5f5f5'
                       e.currentTarget.style.color = '#666666'
                     }}
@@ -339,12 +339,12 @@ const Contact = () => {
                   backgroundColor: '#0c2939',
                   color: '#ffffff',
                 }}
-                onMouseEnter={(e) => {
+                onMouseEnter={e => {
                   e.currentTarget.style.backgroundColor = '#2a3a4d'
                   e.currentTarget.style.transform = 'translateY(-2px)'
                   e.currentTarget.style.boxShadow = '0 10px 20px rgba(29, 44, 61, 0.3)'
                 }}
-                onMouseLeave={(e) => {
+                onMouseLeave={e => {
                   e.currentTarget.style.backgroundColor = '#0c2939'
                   e.currentTarget.style.transform = 'translateY(0)'
                   e.currentTarget.style.boxShadow = 'none'

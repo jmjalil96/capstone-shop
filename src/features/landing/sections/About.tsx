@@ -103,7 +103,7 @@ const About = () => {
 
             {/* Features list */}
             <div className="mb-8 space-y-4">
-              {features.map((feature) => (
+              {features.map(feature => (
                 <div key={feature.text} className="flex items-start">
                   <div className="mt-1 rounded-full p-1" style={{ backgroundColor: '#f5f5f5' }}>
                     <Check size={16} style={{ color: 'rgba(0, 140, 126, 0.8)' }} />
@@ -117,7 +117,7 @@ const About = () => {
 
             {/* Info cards */}
             <div className="mb-8 grid grid-cols-2 gap-6">
-              {infoCards.map((card) => (
+              {infoCards.map(card => (
                 <div
                   key={card.title}
                   className="rounded-2xl p-6 transition-all hover:shadow-md"
@@ -142,12 +142,12 @@ const About = () => {
                 backgroundColor: '#0c2939',
                 color: '#ffffff',
               }}
-              onMouseEnter={(e) => {
+              onMouseEnter={e => {
                 e.currentTarget.style.backgroundColor = '#2a3a4d'
                 e.currentTarget.style.transform = 'translateY(-2px)'
                 e.currentTarget.style.boxShadow = '0 10px 20px rgba(29, 44, 61, 0.3)'
               }}
-              onMouseLeave={(e) => {
+              onMouseLeave={e => {
                 e.currentTarget.style.backgroundColor = '#0c2939'
                 e.currentTarget.style.transform = 'translateY(0)'
                 e.currentTarget.style.boxShadow = 'none'

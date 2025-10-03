@@ -15,7 +15,7 @@ const Footer = () => {
             </a>
             <p className="mb-6 max-w-xs text-white/80">{companyInfo.description}</p>
             <div className="flex space-x-3">
-              {socialLinks.map((social) => (
+              {socialLinks.map(social => (
                 <a
                   key={social.name}
                   href={social.url}
@@ -23,10 +23,10 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-all duration-300 hover:bg-white/20"
                   aria-label={social.name}
-                  onMouseEnter={(e) => {
+                  onMouseEnter={e => {
                     e.currentTarget.style.backgroundColor = 'rgba(0, 140, 126, 0.8)'
                   }}
-                  onMouseLeave={(e) => {
+                  onMouseLeave={e => {
                     e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'
                   }}
                 >
@@ -49,15 +49,15 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <h3 className="mb-6 font-bold text-xl">Enlaces útiles</h3>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
+              {quickLinks.map(link => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     className="text-white/80 transition-colors hover:text-white"
-                    onMouseEnter={(e) => {
+                    onMouseEnter={e => {
                       e.currentTarget.style.color = '#e1ab33'
                     }}
-                    onMouseLeave={(e) => {
+                    onMouseLeave={e => {
                       e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)'
                     }}
                   >
@@ -71,15 +71,15 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <h3 className="mb-6 font-bold text-xl">Legal</h3>
             <ul className="space-y-3">
-              {legalLinks.map((link) => (
+              {legalLinks.map(link => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     className="text-white/80 transition-colors hover:text-white"
-                    onMouseEnter={(e) => {
+                    onMouseEnter={e => {
                       e.currentTarget.style.color = '#e1ab33'
                     }}
-                    onMouseLeave={(e) => {
+                    onMouseLeave={e => {
                       e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)'
                     }}
                   >
@@ -96,7 +96,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <Phone size={20} className="mt-1 mr-3 flex-shrink-0" style={{ color: '#e1ab33' }} />
                 <div>
-                  {contactDetails.phones.map((phone) => (
+                  {contactDetails.phones.map(phone => (
                     <p key={phone} className="text-white/80">
                       <a
                         href={`tel:${phone.replace(/\s/g, '')}`}
@@ -126,7 +126,7 @@ const Footer = () => {
                   style={{ color: '#e1ab33' }}
                 />
                 <div className="text-white/80">
-                  {contactDetails.address.map((line) => (
+                  {contactDetails.address.map(line => (
                     <p key={line}>{line}</p>
                   ))}
                 </div>
@@ -142,15 +142,15 @@ const Footer = () => {
             © {currentYear} {companyInfo.name} Seguros C.A. Todos los derechos reservados.
           </p>
           <div className="flex flex-wrap justify-center gap-6 md:justify-end">
-            {legalLinks.map((link) => (
+            {legalLinks.map(link => (
               <a
                 key={link.label}
                 href={link.href}
                 className="text-sm text-white/60 transition-colors hover:text-white"
-                onMouseEnter={(e) => {
+                onMouseEnter={e => {
                   e.currentTarget.style.color = '#e1ab33'
                 }}
-                onMouseLeave={(e) => {
+                onMouseLeave={e => {
                   e.currentTarget.style.color = 'rgba(255, 255, 255, 0.6)'
                 }}
               >
