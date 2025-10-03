@@ -7,9 +7,13 @@ import FormInput from '@/components/ui/form/FormInput'
 interface ContactFormCardProps {
   onSubmit: (data: ContactInfoFormData) => void
   onBack: () => void
+  isSubmitting?: boolean
+  error?: string | null
+  showRetryButton?: boolean
+  retryAfter?: number | null
 }
 
-function ContactFormCard({ onSubmit, onBack }: ContactFormCardProps) {
+function ContactFormCard({ onSubmit, onBack, isSubmitting = false, error, showRetryButton, retryAfter = null }: ContactFormCardProps) {
   const {
     register,
     handleSubmit,
@@ -37,6 +41,25 @@ function ContactFormCard({ onSubmit, onBack }: ContactFormCardProps) {
           con tu cotización personalizada.
         </p>
       </div>
+
+      {error && (
+        <div className="rounded-lg border border-red-200 bg-red-50 p-4">
+          <p className="text-sm text-red-600">{error}</p>
+          {showRetryButton && (
+            <button
+              type="submit"
+              disabled={isSubmitting || !isValid || (retryAfter !== null && retryAfter > 0)}
+              className="mt-2 w-full rounded-full py-2 font-medium text-sm transition-all duration-200 bg-red-600 text-white hover:bg-red-700 disabled:bg-red-300"
+            >
+              {retryAfter && retryAfter > 0
+                ? `Reintentar en ${retryAfter}s`
+                : isSubmitting
+                ? 'Enviando...'
+                : 'Reintentar'}
+            </button>
+          )}
+        </div>
+      )}
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <FormInput
@@ -75,25 +98,27 @@ function ContactFormCard({ onSubmit, onBack }: ContactFormCardProps) {
         <div className="space-y-4 pt-4">
           <button
             type="submit"
-            disabled={!isValid}
-            className="w-full rounded-full py-4 font-bold text-lg transition-all duration-300 hover:-translate-y-1 transform hover:shadow-xl active:scale-95 text-white"
+            disabled={!isValid || isSubmitting}
+            className="w-full rounded-full py-4 font-bold text-lg transition-all duration-300 hover:-translate-y-1 transform hover:shadow-xl active:scale-95 text-white disabled:opacity-50"
             style={{
-              backgroundColor: !isValid ? '#cbd5e1' : '#0d9488',
+              backgroundColor: (!isValid || isSubmitting) ? '#cbd5e1' : '#0d9488',
             }}
             onMouseEnter={e => {
-              if (isValid) {
+              if (isValid && !isSubmitting) {
                 e.currentTarget.style.backgroundColor = '#0f766e'
                 e.currentTarget.style.boxShadow = '0 20px 40px rgba(13, 148, 136, 0.4)'
               }
             }}
             onMouseLeave={e => {
-              if (isValid) {
+              if (isValid && !isSubmitting) {
                 e.currentTarget.style.backgroundColor = '#0d9488'
                 e.currentTarget.style.boxShadow = 'none'
               }
             }}
           >
-            {!isValid
+            {isSubmitting
+              ? 'Enviando...'
+              : !isValid
               ? completedFields === 2
                 ? 'Completa 1 campo más'
                 : `Completa ${3 - completedFields} campos más`

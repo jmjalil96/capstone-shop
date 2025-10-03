@@ -1,0 +1,53 @@
+graph TB
+    A[Frontend: Step3Quote] -->|Generate UUID| B[POST /api/submit-quote]
+    
+    B --> C{Validate with Zod}
+    C -->|Invalid| D[Return 400 Error]
+    C -->|Valid| E{Check Idempotency}
+    
+    E -->|Duplicate| F[Return Cached Response]
+    E -->|New| G[Process Quote]
+    
+    G --> H{Parallel Operations}
+    
+    H --> I[Store in Database]
+    H --> J[Append to Google Sheets]
+    H --> K[Send Email via Resend]
+    H --> L[Log Analytics Event]
+    
+    I --> M{All Critical Ops Success?}
+    J --> M
+    K --> N{Email Success?}
+    L --> M
+    
+    N -->|Failed| O[Log Warning]
+    N -->|Success| M
+    O --> M
+    
+    M -->|Yes| P[Cache Response]
+    M -->|No| Q[Handle Errors]
+    
+    P --> R[Return 200 Success]
+    Q --> S{Error Type}
+    
+    S -->|Retryable| T[Return 503 + Retry Header]
+    S -->|Client Error| U[Return 400 Error]
+    S -->|Server Error| V[Return 500 Error]
+    
+    R --> W[Navigate to Success Page]
+    T --> X[Show Retry UI]
+    U --> Y[Show Error Message]
+    V --> Y
+    
+    Z[Admin Dashboard] -.->|Monitor| AA[Structured Logs]
+    AB[Health Check Endpoint] -.->|Verify| I
+    AB -.->|Verify| J
+    AB -.->|Verify| K
+    
+    AC[Webhook Notification] -.->|On Success| AD[Slack/Discord]
+    P --> AC
+    
+    style H fill:#4CAF50
+    style M fill:#FF9800
+    style C fill:#2196F3
+    style E fill:#9C27B0
