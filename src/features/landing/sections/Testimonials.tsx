@@ -13,7 +13,7 @@ const StarRating = ({ rating }: { rating: number }) => {
           key={i}
           size={18}
           className={i < rating ? 'fill-current' : ''}
-          style={{ color: i < rating ? '#e9b949' : '#d1d5db' }}
+          style={{ color: i < rating ? '#e2ab33' : '#d1d5db' }}
         />
       ))}
     </div>
@@ -65,7 +65,7 @@ const Testimonials = () => {
     <section
       id="testimonios"
       className="relative overflow-hidden px-4 py-20 sm:px-6 md:px-8 lg:px-12"
-      style={{ backgroundColor: '#1d2c3d' }}
+      style={{ backgroundColor: '#0c2939' }}
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center md:mb-16">
@@ -76,7 +76,7 @@ const Testimonials = () => {
               border: '1px solid rgba(233, 185, 73, 0.3)',
             }}
           >
-            <span className="font-medium text-sm" style={{ color: '#e9b949' }}>
+            <span className="font-medium text-sm" style={{ color: '#e2ab33' }}>
               Lo que dicen de nosotros
             </span>
           </div>
@@ -93,7 +93,7 @@ const Testimonials = () => {
           <div className="relative rounded-2xl bg-white/5 p-8 backdrop-blur-sm md:p-12">
             <div
               className="-left-4 -top-4 absolute text-7xl opacity-20 md:text-8xl"
-              style={{ color: '#e9b949' }}
+              style={{ color: '#e2ab33' }}
             >
               &ldquo;
             </div>
@@ -135,7 +135,7 @@ const Testimonials = () => {
                     style={{
                       width: currentIndex === index ? '24px' : '10px',
                       backgroundColor:
-                        currentIndex === index ? '#e9b949' : 'rgba(255, 255, 255, 0.3)',
+                        currentIndex === index ? '#e2ab33' : 'rgba(255, 255, 255, 0.3)',
                     }}
                     aria-label={`Ir al testimonio ${index + 1}`}
                   />
@@ -169,8 +169,8 @@ const Testimonials = () => {
             href="#contacto"
             className="inline-flex items-center rounded-full px-7 py-3 font-semibold transition-all duration-300"
             style={{
-              backgroundColor: '#e9b949',
-              color: '#1d2c3d',
+              backgroundColor: '#e2ab33',
+              color: '#0c2939',
             }}
             onMouseEnter={e => {
               e.currentTarget.style.backgroundColor = '#f0c65a'
@@ -178,7 +178,7 @@ const Testimonials = () => {
               e.currentTarget.style.boxShadow = '0 10px 20px rgba(233, 185, 73, 0.3)'
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.backgroundColor = '#e9b949'
+              e.currentTarget.style.backgroundColor = '#e2ab33'
               e.currentTarget.style.transform = 'translateY(0)'
               e.currentTarget.style.boxShadow = 'none'
             }}

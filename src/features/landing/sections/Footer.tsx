@@ -24,7 +24,7 @@ const Footer = () => {
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-all duration-300 hover:bg-white/20"
                   aria-label={social.name}
                   onMouseEnter={e => {
-                    e.currentTarget.style.backgroundColor = '#4ca18d'
+                    e.currentTarget.style.backgroundColor = 'rgba(0, 140, 126, 0.8)'
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'
@@ -55,7 +55,7 @@ const Footer = () => {
                     href={link.href}
                     className="text-white/80 transition-colors hover:text-white"
                     onMouseEnter={e => {
-                      e.currentTarget.style.color = '#e9b949'
+                      e.currentTarget.style.color = '#e1ab33'
                     }}
                     onMouseLeave={e => {
                       e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)'
@@ -77,7 +77,7 @@ const Footer = () => {
                     href={link.href}
                     className="text-white/80 transition-colors hover:text-white"
                     onMouseEnter={e => {
-                      e.currentTarget.style.color = '#e9b949'
+                      e.currentTarget.style.color = '#e1ab33'
                     }}
                     onMouseLeave={e => {
                       e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)'
@@ -94,7 +94,7 @@ const Footer = () => {
             <h3 className="mb-6 font-bold text-xl">Contacto</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <Phone size={20} className="mt-1 mr-3 flex-shrink-0" style={{ color: '#e9b949' }} />
+                <Phone size={20} className="mt-1 mr-3 flex-shrink-0" style={{ color: '#e1ab33' }} />
                 <div>
                   {contactDetails.phones.map(phone => (
                     <p key={phone} className="text-white/80">
@@ -109,7 +109,7 @@ const Footer = () => {
                 </div>
               </li>
               <li className="flex items-start">
-                <Mail size={20} className="mt-1 mr-3 flex-shrink-0" style={{ color: '#e9b949' }} />
+                <Mail size={20} className="mt-1 mr-3 flex-shrink-0" style={{ color: '#e1ab33' }} />
                 <p className="text-white/80">
                   <a
                     href={`mailto:${contactDetails.email}`}
@@ -123,7 +123,7 @@ const Footer = () => {
                 <MapPin
                   size={20}
                   className="mt-1 mr-3 flex-shrink-0"
-                  style={{ color: '#e9b949' }}
+                  style={{ color: '#e1ab33' }}
                 />
                 <div className="text-white/80">
                   {contactDetails.address.map(line => (
@@ -139,7 +139,7 @@ const Footer = () => {
 
         <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
           <p className="text-center text-sm text-white/60 md:text-left">
-            © {currentYear} {companyInfo.name} Brokers. Todos los derechos reservados.
+            © {currentYear} {companyInfo.name} Seguros C.A. Todos los derechos reservados.
           </p>
           <div className="flex flex-wrap justify-center gap-6 md:justify-end">
             {legalLinks.map(link => (
@@ -148,7 +148,7 @@ const Footer = () => {
                 href={link.href}
                 className="text-sm text-white/60 transition-colors hover:text-white"
                 onMouseEnter={e => {
-                  e.currentTarget.style.color = '#e9b949'
+                  e.currentTarget.style.color = '#e1ab33'
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.color = 'rgba(255, 255, 255, 0.6)'

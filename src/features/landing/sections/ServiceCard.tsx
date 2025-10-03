@@ -26,7 +26,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
         {featured && (
           <div
             className="-right-2 -top-2 absolute rounded-lg px-3 py-1 font-bold text-xs"
-            style={{ backgroundColor: '#e9b949', color: '#1d2c3d' }}
+            style={{ backgroundColor: 'rgba(225, 171, 51, 0.8)', color: '#0c2939' }}
           >
             Destacado
           </div>
@@ -36,13 +36,13 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
           className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl transition-all duration-300"
           style={{
             backgroundColor: featured ? 'rgba(233, 185, 73, 0.15)' : 'rgba(29, 44, 61, 0.08)',
-            color: featured ? '#e9b949' : '#1d2c3d',
+            color: featured ? 'rgba(225, 171, 51, 0.8)' : '#0c2939',
           }}
         >
           <Icon size={24} strokeWidth={2} />
         </div>
 
-        <h3 className="mb-3 font-bold text-xl" style={{ color: '#1d2c3d' }}>
+        <h3 className="mb-3 font-bold text-xl" style={{ color: '#0c2939' }}>
           {title}
         </h3>
         <p className="flex-grow leading-relaxed" style={{ color: '#333333' }}>
@@ -54,25 +54,27 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
           className="mt-6 w-full rounded-full px-4 py-2.5 font-semibold transition-all duration-300"
           style={{
             backgroundColor: 'transparent',
-            color: '#1d2c3d',
-            border: featured ? '2px solid #e9b949' : '2px solid rgba(29, 44, 61, 0.2)',
+            color: '#0c2939',
+            border: featured
+              ? '2px solid rgba(225, 171, 51, 0.8)'
+              : '2px solid rgba(29, 44, 61, 0.2)',
           }}
           onMouseEnter={e => {
             if (featured) {
-              e.currentTarget.style.backgroundColor = '#e9b949'
-              e.currentTarget.style.borderColor = '#e9b949'
-              e.currentTarget.style.color = '#1d2c3d'
+              e.currentTarget.style.backgroundColor = 'rgba(225, 171, 51, 0.9)'
+              e.currentTarget.style.borderColor = 'rgba(225, 171, 51, 0.7)'
+              e.currentTarget.style.color = '#0c2939'
             } else {
-              e.currentTarget.style.backgroundColor = '#1d2c3d'
-              e.currentTarget.style.borderColor = '#1d2c3d'
+              e.currentTarget.style.backgroundColor = '#0c2939'
+              e.currentTarget.style.borderColor = '#0c2939'
               e.currentTarget.style.color = '#ffffff'
             }
           }}
           onMouseLeave={e => {
             e.currentTarget.style.backgroundColor = 'transparent'
-            e.currentTarget.style.color = '#1d2c3d'
+            e.currentTarget.style.color = '#0c2939'
             if (featured) {
-              e.currentTarget.style.borderColor = '#e9b949'
+              e.currentTarget.style.borderColor = 'rgba(225, 171, 51, 0.8)'
             } else {
               e.currentTarget.style.borderColor = 'rgba(29, 44, 61, 0.2)'
             }

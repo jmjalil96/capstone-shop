@@ -78,7 +78,7 @@ function HealthInsuranceForm({ onSubmit }: HealthInsuranceFormProps) {
           <div>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
               <div>
-                <h3 className="font-semibold text-lg" style={{ color: '#1d2c3d' }}>
+                <h3 className="font-semibold text-lg" style={{ color: '#0c2939' }}>
                   Miembros del Grupo Familiar
                 </h3>
                 <p className="text-sm" style={{ color: '#666666' }}>
