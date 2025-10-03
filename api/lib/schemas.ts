@@ -93,7 +93,7 @@ export const submitQuoteResponseSchema = z.object({
     message: z.string(),
     retryable: z.boolean(),
     retryAfter: z.number().optional(),
-    details: z.record(z.unknown()).optional()
+    details: z.record(z.string(), z.unknown()).optional()
   }).optional(),
   processingTime: z.number().optional(),
   timestamp: z.string().datetime()

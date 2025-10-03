@@ -57,7 +57,7 @@ export default async function handler(req: any, res: any) {
     if (!emailLimit.allowed) {
       const response: SubmitQuoteResponse = {
         success: false,
-        referenceNumber: requestData.referenceNumber,
+        referenceNumber: requestData!.referenceNumber,
         error: {
           code: 'RATE_LIMIT_EXCEEDED',
           message: 'Too many submissions from this email',
@@ -72,7 +72,7 @@ export default async function handler(req: any, res: any) {
     if (!ipLimit.allowed) {
       const response: SubmitQuoteResponse = {
         success: false,
-        referenceNumber: requestData.referenceNumber,
+        referenceNumber: requestData!.referenceNumber,
         error: {
           code: 'RATE_LIMIT_EXCEEDED',
           message: 'Too many submissions from this IP',
@@ -85,13 +85,13 @@ export default async function handler(req: any, res: any) {
     }
 
     // Check idempotency
-    const idempotencyKey = `idempotency:${requestData.idempotencyKey}`
+    const idempotencyKey = `idempotency:${requestData!.idempotencyKey}`
     const existingResponse = await kv.get<SubmitQuoteResponse>(idempotencyKey)
 
     if (existingResponse) {
       logger.info('idempotent_request', {
-        referenceNumber: requestData.referenceNumber,
-        idempotencyKey: requestData.idempotencyKey
+        referenceNumber: requestData!.referenceNumber,
+        idempotencyKey: requestData!.idempotencyKey
       })
       return res.status(200).json(existingResponse)
     }
@@ -115,7 +115,7 @@ export default async function handler(req: any, res: any) {
         if (operation === 'database') {
           hasCriticalFailure = true
           logger.error('database_save_failed', result.reason, {
-            referenceNumber: requestData.referenceNumber
+            referenceNumber: requestData!.referenceNumber
           })
         } else {
           warnings.push({
@@ -124,8 +124,7 @@ export default async function handler(req: any, res: any) {
             message: `${operation} operation failed: ${result.reason.message}`
           })
           logger.warn(`${operation}_failed`, {
-            error: result.reason,
-            referenceNumber: requestData.referenceNumber
+            metadata: { error: result.reason, referenceNumber: requestData!.referenceNumber }
           })
         }
       }
