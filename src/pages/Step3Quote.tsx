@@ -32,7 +32,7 @@ function Step3Quote() {
     setIsSubmitting(true)
     setError(null)
 
-    const startTime = Date.now()
+    // const startTime = Date.now()
 
     try {
       const response = await fetch('/api/submit-quote', {
