@@ -8,7 +8,7 @@ const STAR_INDICES = [0, 1, 2, 3, 4] as const
 const StarRating = ({ rating }: { rating: number }) => {
   return (
     <div className="flex gap-1">
-      {STAR_INDICES.map((i) => (
+      {STAR_INDICES.map(i => (
         <Star
           key={i}
           size={18}
@@ -25,11 +25,11 @@ const Testimonials = () => {
   const currentTestimonial = testimonials[currentIndex]
 
   const handlePrev = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1))
+    setCurrentIndex(prevIndex => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1))
   }, [])
 
   const handleNext = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1))
+    setCurrentIndex(prevIndex => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1))
   }, [])
 
   const handleDotClick = useCallback((index: number) => {
@@ -172,12 +172,12 @@ const Testimonials = () => {
               backgroundColor: '#e9b949',
               color: '#1d2c3d',
             }}
-            onMouseEnter={(e) => {
+            onMouseEnter={e => {
               e.currentTarget.style.backgroundColor = '#f0c65a'
               e.currentTarget.style.transform = 'translateY(-2px)'
               e.currentTarget.style.boxShadow = '0 10px 20px rgba(233, 185, 73, 0.3)'
             }}
-            onMouseLeave={(e) => {
+            onMouseLeave={e => {
               e.currentTarget.style.backgroundColor = '#e9b949'
               e.currentTarget.style.transform = 'translateY(0)'
               e.currentTarget.style.boxShadow = 'none'

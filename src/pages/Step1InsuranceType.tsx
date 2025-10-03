@@ -35,7 +35,10 @@ function Step1InsuranceType() {
         className="group fixed top-6 left-6 z-40 flex items-center gap-2 rounded-full border border-slate-300/50 bg-white/80 px-4 py-2.5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-teal-500/50 hover:bg-white hover:shadow-md hover:-translate-y-0.5"
         aria-label="Volver a la página principal"
       >
-        <Home size={18} className="text-slate-600 transition-colors duration-300 group-hover:text-teal-600" />
+        <Home
+          size={18}
+          className="text-slate-600 transition-colors duration-300 group-hover:text-teal-600"
+        />
         <span className="hidden text-sm font-medium text-slate-700 transition-colors duration-300 group-hover:text-teal-600 sm:inline">
           Inicio
         </span>

@@ -67,10 +67,7 @@ const Hero = () => {
               personales y empresariales.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 md:gap-5">
-              <Link
-                to="/quote/type"
-                className="btn-primary group flex items-center justify-center"
-              >
+              <Link to="/quote/type" className="btn-primary group flex items-center justify-center">
                 <span>Capstone Shop</span>
                 <ArrowRight
                   size={18}

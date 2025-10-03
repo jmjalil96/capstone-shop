@@ -57,7 +57,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
             color: '#1d2c3d',
             border: featured ? '2px solid #e9b949' : '2px solid rgba(29, 44, 61, 0.2)',
           }}
-          onMouseEnter={(e) => {
+          onMouseEnter={e => {
             if (featured) {
               e.currentTarget.style.backgroundColor = '#e9b949'
               e.currentTarget.style.borderColor = '#e9b949'
@@ -68,7 +68,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
               e.currentTarget.style.color = '#ffffff'
             }
           }}
-          onMouseLeave={(e) => {
+          onMouseLeave={e => {
             e.currentTarget.style.backgroundColor = 'transparent'
             e.currentTarget.style.color = '#1d2c3d'
             if (featured) {

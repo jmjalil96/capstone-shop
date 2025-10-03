@@ -12,7 +12,7 @@ const Navbar = () => {
 
   // Memoized toggle function with debouncing
   const toggleMenu = useCallback(() => {
-    setIsOpen((prev) => !prev)
+    setIsOpen(prev => !prev)
   }, [])
 
   // Handle scroll
@@ -84,7 +84,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center space-x-8 md:flex">
-          {navItems.map((item) => (
+          {navItems.map(item => (
             <NavbarLink key={item.href} href={item.href}>
               {item.label}
             </NavbarLink>

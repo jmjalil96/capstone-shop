@@ -78,7 +78,7 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
         {/* Menu content */}
         <nav className="flex h-full flex-col px-6 pt-20">
           <ul className="space-y-1">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <li key={item.href}>
                 <a
                   href={item.href}
