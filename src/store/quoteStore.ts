@@ -49,10 +49,17 @@ export const useQuoteStore = create<QuoteState>()(
       setInsuranceType: (type: InsuranceType) => {
         const now = new Date().toISOString()
         const { createdAt } = get()
+
+        // Generate reference number immediately when insurance type is selected
+        const year = new Date().getFullYear()
+        const randomId = Math.random().toString().slice(2, 8)
+        const referenceNumber = `QT-${year}-${randomId}`
+
         set({
           insuranceType: type,
           formData: null, // Reset form data when changing insurance type
           quote: null, // Reset quote
+          referenceNumber, // Set reference number for entire flow
           createdAt: createdAt || now, // Set if first time
           updatedAt: now,
         })
@@ -65,7 +72,6 @@ export const useQuoteStore = create<QuoteState>()(
       calculateQuote: () => {
         const { insuranceType, formData } = get()
         if (!insuranceType || !formData) {
-          console.error('Cannot calculate quote without insurance type and form data')
           return
         }
 
@@ -74,14 +80,8 @@ export const useQuoteStore = create<QuoteState>()(
       },
 
       setContactInfo: (info: ContactInfo) => {
-        // Generate unique reference number for this submission
-        const year = new Date().getFullYear()
-        const randomId = Math.random().toString().slice(2, 8)
-        const referenceNumber = `QT-${year}-${randomId}`
-
         set({
           contactInfo: info,
-          referenceNumber,
           updatedAt: new Date().toISOString(),
         })
       },

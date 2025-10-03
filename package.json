@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:api": "vercel dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -14,6 +15,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@types/canvas-confetti": "^1.9.0",
+    "@vercel/node": "^5.3.24",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
     "lucide-react": "^0.544.0",
@@ -21,6 +23,7 @@
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.63.0",
     "react-router-dom": "^7.9.3",
+    "resend": "^6.1.2",
     "tailwind-merge": "^3.3.1",
     "zod": "^4.1.11",
     "zustand": "^5.0.8"

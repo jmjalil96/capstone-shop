@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useQuoteStore } from '@/store/quoteStore'
 import type { ContactInfoFormData } from '@/schemas/contactInfo'
 import FormPageLayout from '@/components/ui/form/FormPageLayout'
@@ -9,7 +9,9 @@ import TrustIndicators from '@/components/step3/TrustIndicators'
 
 function Step3Quote() {
   const navigate = useNavigate()
-  const { quote, setContactInfo, insuranceType, formData } = useQuoteStore()
+  const { quote, setContactInfo, insuranceType, formData, referenceNumber } = useQuoteStore()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   // Scroll to top on mount
   useEffect(() => {
@@ -23,9 +25,41 @@ function Step3Quote() {
     }
   }, [insuranceType, formData, quote, navigate])
 
-  const handleSubmit = (data: ContactInfoFormData) => {
-    setContactInfo(data)
-    navigate('/success')
+  const handleSubmit = async (data: ContactInfoFormData) => {
+    setIsSubmitting(true)
+    setError(null)
+
+    try {
+      const response = await fetch('/api/submit-quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          insuranceType,
+          quote,
+          contactInfo: data,
+          formData,
+          referenceNumber,
+        }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Error al enviar la cotización')
+      }
+
+      // Save contact info to store
+      setContactInfo(data)
+
+      // Navigate to success page
+      navigate('/success')
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Error al enviar la cotización')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleBack = () => {
@@ -74,7 +108,12 @@ function Step3Quote() {
 
         {/* Contact Form - Right Side (40%) */}
         <div className="lg:col-span-2">
-          <ContactFormCard onSubmit={handleSubmit} onBack={handleBack} />
+          <ContactFormCard
+            onSubmit={handleSubmit}
+            onBack={handleBack}
+            isSubmitting={isSubmitting}
+            error={error}
+          />
         </div>
       </div>
 
